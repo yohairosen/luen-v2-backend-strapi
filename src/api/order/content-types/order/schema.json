@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "delivered",
+        "not delivered"
+      ]
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "integer"
+    },
+    "Customer_Name": {
+      "type": "string"
+    },
+    "Customer_Address": {
+      "type": "text"
+    },
+    "Product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "Stores": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::store.store"
+    }
+  }
+}
